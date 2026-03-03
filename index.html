@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name • Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="cursor-glow"></div>
+    
+    <!-- Terminal Header -->
+    <header class="terminal-header">
+        <div class="container">
+            <div class="terminal-window">
+                <div class="terminal-controls">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="terminal-title">portfolio.sh</div>
+            </div>
+            <div class="header-content">
+                <div class="ascii-art">
+                    <pre>
+ ▄▀▀▄ ▄▀▀▄  ▄▀▀▀▀▄   ▄▀▀▄ ▀▄  ▄▀▀█▄▄▄▄ 
+█   █    █ █      █ █  █ █ █ ▐  ▄▀   ▐ 
+▐  █    █  █      █ ▐  █  ▀█   █▄▄▄▄▄  
+  █   ▄▀   ▀▄    ▄▀   █   █    █    ▌  
+   ▀▄▀       ▀▀▀▀   ▄▀   █    ▄▀▄▄▄▄   
+                    █    ▐    █    ▐   
+                    ▐         ▐        
+                    </pre>
+                </div>
+                <h1 class="glitch-text" data-text="Your Name">Your Name</h1>
+                <p class="subtitle">
+                    <span class="typed-text">Developer • Designer • Problem Solver</span>
+                    <span class="cursor-blink">_</span>
+                </p>
+                <nav class="terminal-nav">
+                    <a href="#about" class="nav-link">$ ls about</a>
+                    <a href="#projects" class="nav-link">$ cat projects</a>
+                    <a href="#skills" class="nav-link">$ ./skills.sh</a>
+                    <a href="#contact" class="nav-link">$ ping contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="terminal-prompt">
+                <span class="prompt-symbol">➜</span>
+                <span class="prompt-path">~/portfolio</span>
+                <span class="prompt-command">cat about.txt</span>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="scan-line"></div>
+                        <img src="your-photo.jpg" alt="Your Name" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder-image" style="display: none;">
+                            <span>PHOTO</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <h2 class="section-title">
+                        <span class="bracket">[</span>
+                        About Me
+                        <span class="bracket">]</span>
+                    </h2>
+                    <div class="text-content">
+                        <p class="highlight">Hi, I'm [Your Name]</p>
+                        <p>
+                            I'm a passionate developer with a love for creating elegant solutions to complex problems. 
+                            Currently studying [Your Field] at [Your University/Company], I focus on building 
+                            applications that make a difference.
+                        </p>
+                        <p>
+                            When I'm not coding, you'll find me [your hobbies]. I believe in continuous learning 
+                            and pushing the boundaries of what's possible with technology.
+                        </p>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                                <span class="icon">→</span> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">
+                                <span class="icon">→</span> LinkedIn
+                            </a>
+                            <a href="https://twitter.com/yourhandle" target="_blank" class="social-link">
+                                <span class="icon">→</span> Twitter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="terminal-prompt">
+                <span class="prompt-symbol">➜</span>
+                <span class="prompt-path">~/portfolio</span>
+                <span class="prompt-command">ls -la projects/</span>
+            </div>
+            
+            <h2 class="section-title">
+                <span class="bracket">[</span>
+                Featured Projects
+                <span class="bracket">]</span>
+            </h2>
+
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="file-icon">📁</span>
+                        <h3>Project Name 1</h3>
+                        <span class="status active">● active</span>
+                    </div>
+                    <p class="project-desc">
+                        A brief description of your project. What problem does it solve? 
+                        What technologies did you use?
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <span>→</span> View Project
+                        </a>
+                        <a href="#" class="project-link">
+                            <span>→</span> Source Code
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="file-icon">📁</span>
+                        <h3>Project Name 2</h3>
+                        <span class="status">● completed</span>
+                    </div>
+                    <p class="project-desc">
+                        Another exciting project showcasing your skills. Highlight the 
+                        impact and technical challenges you overcame.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <span>→</span> View Project
+                        </a>
+                        <a href="#" class="project-link">
+                            <span>→</span> Source Code
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="card-header">
+                        <span class="file-icon">📁</span>
+                        <h3>Project Name 3</h3>
+                        <span class="status active">● active</span>
+                    </div>
+                    <p class="project-desc">
+                        Your third featured project. Explain what makes it special and 
+                        what you learned from building it.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">
+                            <span>→</span> View Project
+                        </a>
+                        <a href="#" class="project-link">
+                            <span>→</span> Source Code
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="terminal-prompt">
+                <span class="prompt-symbol">➜</span>
+                <span class="prompt-path">~/portfolio</span>
+                <span class="prompt-command">./display-skills.sh</span>
+            </div>
+            
+            <h2 class="section-title">
+                <span class="bracket">[</span>
+                Technical Skills
+                <span class="bracket">]</span>
+            </h2>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="progress-bars">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>JavaScript/TypeScript</span>
+                                <span class="percentage">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>React/Next.js</span>
+                                <span class="percentage">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>CSS/Tailwind</span>
+                                <span class="percentage">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Backend Development</h3>
+                    <div class="progress-bars">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Node.js/Express</span>
+                                <span class="percentage">82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Python/Django</span>
+                                <span class="percentage">78%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Database Design</span>
+                                <span class="percentage">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Roadmap -->
+            <div class="roadmap">
+                <h3 class="category-title">Learning Roadmap</h3>
+                <div class="roadmap-tree">
+                    <div class="roadmap-item">
+                        <span class="checkbox checked">☑</span>
+                        <span>Master React & TypeScript</span>
+                    </div>
+                    <div class="roadmap-item">
+                        <span class="checkbox checked">☑</span>
+                        <span>Build Full-Stack Applications</span>
+                    </div>
+                    <div class="roadmap-item">
+                        <span class="checkbox">☐</span>
+                        <span>Learn DevOps & CI/CD</span>
+                    </div>
+                    <div class="roadmap-item">
+                        <span class="checkbox">☐</span>
+                        <span>Contribute to Open Source</span>
+                    </div>
+                    <div class="roadmap-item">
+                        <span class="checkbox">☐</span>
+                        <span>Master System Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="terminal-prompt">
+                <span class="prompt-symbol">➜</span>
+                <span class="prompt-path">~/portfolio</span>
+                <span class="prompt-command">cat contact.txt</span>
+            </div>
+            
+            <h2 class="section-title">
+                <span class="bracket">[</span>
+                Get In Touch
+                <span class="bracket">]</span>
+            </h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>
+                        I'm always open to discussing new projects, creative ideas, or opportunities 
+                        to be part of your vision. Feel free to reach out!
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="method-icon">📧</span>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-icon">💼</span>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-icon">🐙</span>
+                            <div>
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="terminal-contact">
+                    <div class="terminal-box">
+                        <div class="terminal-content">
+                            <div class="output-line">
+                                <span class="prompt">$</span> whoami
+                            </div>
+                            <div class="output-line response">Your Name</div>
+                            <div class="output-line">
+                                <span class="prompt">$</span> location
+                            </div>
+                            <div class="output-line response">Your City, Country</div>
+                            <div class="output-line">
+                                <span class="prompt">$</span> status
+                            </div>
+                            <div class="output-line response">Available for opportunities</div>
+                            <div class="output-line">
+                                <span class="prompt">$</span> interests
+                            </div>
+                            <div class="output-line response">Web Dev • Open Source • UX Design</div>
+                            <div class="output-line typing">
+                                <span class="prompt">$</span> <span class="cursor-blink">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2024 Your Name • Built with passion and caffeine ☕</p>
+                <p class="footer-note">Hosted on GitHub Pages • Made with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
