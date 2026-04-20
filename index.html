@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ar1sha55 — security portfolio</title>
-<meta name="description" content="Computer network & security researcher. CTF player."/>
+<meta name="description" content="Computer network & security researcher. CTF player. HackTheBox & TryHackMe."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -83,6 +83,9 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
 .home-badges { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2.25rem; }
 .badge { font-family:var(--mono); font-size:10px; padding:4px 10px; border-radius:3px; border:1px solid var(--border); color:var(--muted); background:var(--surface); letter-spacing:0.04em; }
 .badge.green { background:var(--green-bg); color:var(--green); border-color:var(--green-bd); }
+.badge.htb { background:#1a1a2e; color:#9fef00; border-color:#2a2a4e; }
+.badge.thm { background:#1a1a1a; color:#e8e8e8; border-color:#333; }
+
 .quick-links { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; overflow:hidden; }
 .quick-link { background:var(--surface); padding:1rem 1.1rem; cursor:pointer; transition:background 0.15s; border:none; text-align:left; color:inherit; }
 .quick-link:hover { background:var(--hover); }
@@ -93,6 +96,15 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
 .about-bio { font-size:0.93rem; color:var(--muted); line-height:1.95; margin-bottom:1.75rem; }
 .about-bio strong { color:var(--text); font-weight:500; }
 .about-bio a { color:var(--text); text-underline-offset:3px; }
+
+.platform-cards { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; overflow:hidden; margin-bottom:1.25rem; }
+.platform-card { background:var(--surface); padding:1rem 1.1rem; text-decoration:none; color:inherit; transition:background 0.15s; display:flex; flex-direction:column; gap:3px; }
+.platform-card:hover { background:var(--hover); }
+.pc-name { font-family:var(--mono); font-size:9px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+.pc-handle { font-family:var(--mono); font-size:12px; font-weight:500; }
+.pc-sub { font-size:11px; color:var(--muted); margin-top:2px; }
+.pc-arrow { font-size:11px; color:var(--muted); margin-top:auto; padding-top:6px; }
+
 .stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); border-radius:4px; overflow:hidden; }
 .stat-cell { background:var(--surface); padding:1rem; }
 .stat-num { font-family:var(--mono); font-size:1.45rem; font-weight:400; line-height:1; }
@@ -133,7 +145,134 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
 .contact-item:hover { background:var(--hover); }
 .c-platform { font-family:var(--mono); font-size:9px; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; }
 .c-handle { font-family:var(--mono); font-size:13px; font-weight:500; }
+.c-sub { font-size:11px; color:var(--muted); }
 .c-arrow { font-size:12px; color:var(--muted); margin-top:auto; padding-top:0.5rem; }
+
+/* CV SECTION */
+.cv-box {
+  background:var(--surface); border:1px solid var(--border); border-radius:4px;
+  padding:1.6rem; margin-top:1.25rem;
+}
+.cv-box-title { font-family:var(--mono); font-size:11px; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:0.6rem; }
+.cv-box-desc { font-size:12px; color:var(--muted); line-height:1.7; margin-bottom:1rem; }
+.cv-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:12px; font-weight:500;
+  padding:9px 18px; border:1px solid var(--text); border-radius:3px;
+  color:var(--text); text-decoration:none; background:var(--bg);
+  transition:background 0.15s, color 0.15s; cursor:pointer;
+}
+.cv-btn:hover { background:var(--text); color:var(--bg); }
+
+/* TRAINING / TIMELINE */
+.training-header {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 4px;
+  padding: 1.4rem 1.6rem; margin-bottom: 1.25rem;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+.training-header-left { flex: 1; }
+.training-platform { font-family:var(--mono); font-size:9px; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:4px; }
+.training-title { font-family:var(--mono); font-size:14px; font-weight:500; margin-bottom:3px; }
+.training-sub { font-size:12px; color:var(--muted); }
+.thm-badge {
+  font-family:var(--mono); font-size:10px; font-weight:500;
+  padding:5px 12px; border-radius:3px;
+  background:#1a1a1a; color:#e8e8e8; border:1px solid #333;
+  white-space:nowrap; flex-shrink:0;
+}
+.in-progress-pill {
+  display:inline-flex; align-items:center; gap:5px;
+  font-family:var(--mono); font-size:10px;
+  padding:3px 10px; border-radius:3px;
+  background:var(--green-bg); color:var(--green); border:1px solid var(--green-bd);
+  margin-top:6px;
+}
+.in-progress-pill::before {
+  content:''; display:inline-block; width:5px; height:5px;
+  border-radius:50%; background:var(--green);
+  animation:blink 1.4s step-end infinite;
+}
+
+/* progress bar */
+.path-progress-wrap { margin-bottom:1.5rem; }
+.path-progress-label {
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--mono); font-size:10px; color:var(--muted);
+  margin-bottom:6px; letter-spacing:0.04em;
+}
+.path-progress-bar {
+  height:4px; background:var(--border); border-radius:2px; overflow:hidden;
+}
+.path-progress-fill {
+  height:100%; background:var(--green); border-radius:2px;
+  transition:width 0.8s ease;
+}
+
+/* timeline */
+.timeline { display:flex; flex-direction:column; }
+.tl-item { display:flex; gap:0; position:relative; }
+.tl-left {
+  width:36px; flex-shrink:0; display:flex; flex-direction:column; align-items:center;
+}
+.tl-dot {
+  width:20px; height:20px; border-radius:50%;
+  border:2px solid var(--border); background:var(--surface);
+  display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; z-index:1; font-size:9px;
+}
+.tl-dot.done { background:var(--green); border-color:var(--green); color:#fff; }
+.tl-dot.current {
+  background:var(--surface); border-color:var(--green); border-width:2px;
+  box-shadow:0 0 0 3px var(--green-bg);
+}
+.tl-dot.todo { background:var(--bg); border-color:var(--border); }
+.tl-line {
+  width:2px; flex:1; background:var(--border); margin:2px 0;
+  min-height:16px;
+}
+.tl-line.done { background:var(--green); }
+.tl-item:last-child .tl-line { display:none; }
+
+.tl-right { flex:1; padding:0 0 1.25rem 0.75rem; }
+.tl-module-label {
+  font-family:var(--mono); font-size:9px; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--muted); margin-bottom:3px;
+}
+.tl-title { font-family:var(--mono); font-size:12px; font-weight:500; margin-bottom:3px; }
+.tl-desc { font-size:11px; color:var(--muted); line-height:1.6; }
+.tl-tags { display:flex; gap:0.3rem; flex-wrap:wrap; margin-top:5px; }
+.tl-tag {
+  font-family:var(--mono); font-size:10px; padding:2px 7px;
+  border:1px solid var(--border); border-radius:2px;
+  color:var(--muted); background:var(--bg);
+}
+.tl-tag.active { border-color:var(--green-bd); color:var(--green); background:var(--green-bg); }
+.tl-status {
+  font-family:var(--mono); font-size:9px; letter-spacing:0.06em;
+  margin-top:4px; display:inline-block;
+}
+.tl-status.done-lbl { color:var(--green); }
+.tl-status.cur-lbl { color:var(--green); font-weight:500; }
+.tl-status.todo-lbl { color:var(--muted); }
+
+/* htb section */
+.htb-block {
+  background:var(--surface); border:1px solid var(--border); border-radius:4px;
+  padding:1.4rem 1.6rem; margin-top:1.25rem;
+  display:flex; justify-content:space-between; align-items:center; gap:1rem;
+}
+.htb-left { flex:1; }
+.htb-label { font-family:var(--mono); font-size:9px; color:var(--muted); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:4px; }
+.htb-title { font-family:var(--mono); font-size:14px; font-weight:500; margin-bottom:3px; }
+.htb-sub { font-size:12px; color:var(--muted); }
+.htb-badge {
+  font-family:var(--mono); font-size:10px; font-weight:500;
+  padding:5px 12px; border-radius:3px;
+  background:#1a1a2e; color:#9fef00; border:1px solid #2a2a4e;
+  white-space:nowrap; flex-shrink:0; text-decoration:none;
+  transition:background 0.15s;
+}
+.htb-badge:hover { background:#0d0d1a; }
 
 /* MOBILE */
 @media (max-width:640px) {
@@ -148,6 +287,7 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
   main { height:auto; overflow:visible; }
   .panel { padding:1.5rem 1.25rem; }
   .quick-links,.skills-grid,.stat-row { grid-template-columns:1fr 1fr; }
+  .platform-cards { grid-template-columns:1fr; }
   .ctf-banner { flex-direction:column; }
   .ctf-cats { grid-template-columns:1fr 1fr; }
   .contact-grid { grid-template-columns:1fr; }
@@ -167,6 +307,7 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
     <button class="nav-item" data-panel="skills"><span class="nav-icon">#</span>skills</button>
     <button class="nav-item" data-panel="projects"><span class="nav-icon">⑂</span>projects</button>
     <button class="nav-item" data-panel="ctf"><span class="nav-icon">⚑</span>ctf writeups</button>
+    <button class="nav-item" data-panel="training"><span class="nav-icon">◈</span>training</button>
     <button class="nav-item" data-panel="contact"><span class="nav-icon">@</span>contact</button>
   </nav>
   <div class="sidebar-footer">
@@ -182,12 +323,13 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
   <div class="panel active" id="panel-home">
     <div class="home-tag">// computer network &amp; security</div>
     <h1 class="home-name" id="hero-name">ar1sha55<span class="cursor"></span></h1>
-    <p class="home-sub" id="hero-bio">Security researcher &amp; network enthusiast. I break things to understand how they work — and document the journey.</p>
+    <p class="home-sub" id="hero-bio">Security researcher &amp; network enthusiast. Active on HackTheBox &amp; TryHackMe. I break things to understand how they work — and document the journey.</p>
     <div class="home-badges">
       <span class="badge green">● open to opportunities</span>
       <span class="badge">CTF player</span>
       <span class="badge">network security</span>
-      <span class="badge">penetration testing</span>
+      <span class="badge htb">HackTheBox</span>
+      <span class="badge thm">TryHackMe SOC L1</span>
     </div>
     <div class="quick-links">
       <button class="quick-link" data-panel="about">
@@ -208,10 +350,32 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
     <div class="about-bio" id="about-bio">
       <p>Hi — I'm <strong>ar1sha55</strong>, a computer network and security student with a deep interest in how systems communicate, fail, and get exploited.</p>
       <br/>
-      <p>I spend my time competing in <strong>CTF competitions</strong>, studying network protocols, and building security tooling. My writeups and research notes live on <a href="https://www.notion.so/Cybersecurity-Learning-31c1f5517c5f806c9dabe2ee98c93b2b" target="_blank">Notion</a>.</p>
+      <p>I actively train on <strong>HackTheBox</strong> and am currently working through the <strong>TryHackMe SOC Level 1</strong> learning path. My CTF writeups and research notes are documented on <a href="https://www.notion.so/Cybersecurity-Learning-31c1f5517c5f806c9dabe2ee98c93b2b" target="_blank">Notion</a>.</p>
       <br/>
       <p>Currently focused on <strong>network forensics</strong>, <strong>web exploitation</strong>, and low-level systems security.</p>
     </div>
+
+    <div class="platform-cards">
+      <a class="platform-card" href="https://profile.hackthebox.com/" target="_blank" rel="noopener">
+        <span class="pc-name">HackTheBox</span>
+        <span class="pc-handle">ar1sha55</span>
+        <span class="pc-sub">active player</span>
+        <span class="pc-arrow">→</span>
+      </a>
+      <a class="platform-card" href="https://tryhackme.com/p/nurarisha" target="_blank" rel="noopener">
+        <span class="pc-name">TryHackMe</span>
+        <span class="pc-handle">nurarisha</span>
+        <span class="pc-sub">SOC Level 1 path</span>
+        <span class="pc-arrow">→</span>
+      </a>
+      <a class="platform-card" href="https://github.com/ar1sha55" target="_blank" rel="noopener">
+        <span class="pc-name">GitHub</span>
+        <span class="pc-handle">ar1sha55</span>
+        <span class="pc-sub" id="pc-github-sub">security projects</span>
+        <span class="pc-arrow">→</span>
+      </a>
+    </div>
+
     <div class="stat-row">
       <div class="stat-cell"><div class="stat-num" id="stat-repos">–</div><div class="stat-lbl">repos</div></div>
       <div class="stat-cell"><div class="stat-num" id="stat-followers">–</div><div class="stat-lbl">followers</div></div>
@@ -248,6 +412,18 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
           <span class="skill-tag">Linux</span><span class="skill-tag">Kali</span><span class="skill-tag">Docker</span><span class="skill-tag">Git</span><span class="skill-tag">GDB</span><span class="skill-tag">IDA</span>
         </div>
       </div>
+      <div class="skill-group">
+        <div class="sgt">soc &amp; blue team</div>
+        <div class="skill-tags">
+          <span class="skill-tag">SIEM</span><span class="skill-tag">Log Analysis</span><span class="skill-tag">Threat Intel</span><span class="skill-tag">Incident Response</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sgt">training platforms</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HackTheBox</span><span class="skill-tag">TryHackMe</span><span class="skill-tag">CTFtime</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -265,7 +441,7 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
     <div class="ctf-banner">
       <div>
         <div class="ctf-banner-title">cybersecurity learning notes</div>
-        <div class="ctf-banner-desc">CTF writeups, challenge walkthroughs, and security research notes — covering web, crypto, forensics, pwn, and more.</div>
+        <div class="ctf-banner-desc">CTF writeups, challenge walkthroughs, and security research — covering web, crypto, forensics, pwn, and more.</div>
       </div>
       <a class="ctf-cta" href="https://www.notion.so/Cybersecurity-Learning-31c1f5517c5f806c9dabe2ee98c93b2b" target="_blank" rel="noopener">open notion →</a>
     </div>
@@ -278,22 +454,239 @@ main { flex: 1; height: 100vh; overflow-y: auto; background: var(--bg); }
     </div>
   </div>
 
+  <!-- TRAINING -->
+  <div class="panel" id="panel-training">
+    <div class="panel-title">training &amp; learning paths</div>
+
+    <!-- TryHackMe header -->
+    <div class="training-header">
+      <div class="training-header-left">
+        <div class="training-platform">TryHackMe</div>
+        <div class="training-title">SOC Level 1 Analyst</div>
+        <div class="training-sub">nurarisha · <a href="https://tryhackme.com/p/nurarisha" target="_blank" rel="noopener" style="color:var(--muted);text-underline-offset:3px;">view profile →</a></div>
+        <div class="in-progress-pill">in progress</div>
+      </div>
+      <span class="thm-badge">TryHackMe</span>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="path-progress-wrap">
+      <div class="path-progress-label">
+        <span>path progress</span>
+        <span id="progress-pct">updating…</span>
+      </div>
+      <div class="path-progress-bar">
+        <div class="path-progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- SOC L1 Timeline -->
+    <div class="timeline">
+
+      <!-- 1. Pre-Security -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot done">✓</div>
+          <div class="tl-line done"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 1</div>
+          <div class="tl-title">Pre-Security</div>
+          <div class="tl-desc">Networking basics, web fundamentals, Linux & Windows essentials.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">networking</span><span class="tl-tag">linux</span><span class="tl-tag">web</span>
+          </div>
+          <span class="tl-status done-lbl">✓ completed</span>
+        </div>
+      </div>
+
+      <!-- 2. SOC L1 Core -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot done">✓</div>
+          <div class="tl-line done"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 2</div>
+          <div class="tl-title">Cyber Defence Frameworks</div>
+          <div class="tl-desc">MITRE ATT&CK, Cyber Kill Chain, Pyramid of Pain, threat intelligence fundamentals.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">MITRE</span><span class="tl-tag">threat intel</span><span class="tl-tag">kill chain</span>
+          </div>
+          <span class="tl-status done-lbl">✓ completed</span>
+        </div>
+      </div>
+
+      <!-- 3. Cyber Threat Intel -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot done">✓</div>
+          <div class="tl-line done"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 3</div>
+          <div class="tl-title">Cyber Threat Intelligence</div>
+          <div class="tl-desc">OpenCTI, MISP, threat feeds, IOC analysis, and intelligence lifecycle.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">OpenCTI</span><span class="tl-tag">MISP</span><span class="tl-tag">IOCs</span>
+          </div>
+          <span class="tl-status done-lbl">✓ completed</span>
+        </div>
+      </div>
+
+      <!-- 4. Network Security & Traffic Analysis -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot current"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 4 · current</div>
+          <div class="tl-title">Network Security &amp; Traffic Analysis</div>
+          <div class="tl-desc">Wireshark, Zeek, Brim, Snort — analysing pcaps, detecting intrusions, network forensics.</div>
+          <div class="tl-tags">
+            <span class="tl-tag active">Wireshark</span>
+            <span class="tl-tag active">Snort</span>
+            <span class="tl-tag active">Zeek</span>
+            <span class="tl-tag active">pcap analysis</span>
+          </div>
+          <span class="tl-status cur-lbl">● in progress</span>
+        </div>
+      </div>
+
+      <!-- 5. Endpoint Security -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot todo"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 5</div>
+          <div class="tl-title">Endpoint Security Monitoring</div>
+          <div class="tl-desc">Windows event logs, Sysmon, Wazuh, endpoint detection and response fundamentals.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Sysmon</span><span class="tl-tag">Wazuh</span><span class="tl-tag">EDR</span>
+          </div>
+          <span class="tl-status todo-lbl">○ up next</span>
+        </div>
+      </div>
+
+      <!-- 6. Security Information & Event Management -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot todo"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 6</div>
+          <div class="tl-title">Security Information &amp; Event Management</div>
+          <div class="tl-desc">Splunk, ELK Stack — ingesting logs, building dashboards, writing detection rules.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">Splunk</span><span class="tl-tag">ELK</span><span class="tl-tag">SIEM</span>
+          </div>
+          <span class="tl-status todo-lbl">○ upcoming</span>
+        </div>
+      </div>
+
+      <!-- 7. Digital Forensics & Incident Response -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot todo"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 7</div>
+          <div class="tl-title">Digital Forensics &amp; Incident Response</div>
+          <div class="tl-desc">DFIR methodology, memory forensics, disk imaging, Autopsy, Volatility.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">DFIR</span><span class="tl-tag">Volatility</span><span class="tl-tag">Autopsy</span>
+          </div>
+          <span class="tl-status todo-lbl">○ upcoming</span>
+        </div>
+      </div>
+
+      <!-- 8. Phishing Analysis -->
+      <div class="tl-item">
+        <div class="tl-left">
+          <div class="tl-dot todo"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="tl-right">
+          <div class="tl-module-label">module 8</div>
+          <div class="tl-title">Phishing Analysis</div>
+          <div class="tl-desc">Email header analysis, phishing IOCs, sandboxing malicious attachments.</div>
+          <div class="tl-tags">
+            <span class="tl-tag">email analysis</span><span class="tl-tag">sandboxing</span>
+          </div>
+          <span class="tl-status todo-lbl">○ upcoming</span>
+        </div>
+      </div>
+
+    </div><!-- end timeline -->
+
+    <!-- HackTheBox block -->
+    <div class="htb-block">
+      <div class="htb-left">
+        <div class="htb-label">HackTheBox</div>
+        <div class="htb-title">active player</div>
+        <div class="htb-sub">pwning machines, completing challenges &amp; tracks</div>
+      </div>
+      <a class="htb-badge" href="https://profile.hackthebox.com/" target="_blank" rel="noopener">HackTheBox →</a>
+    </div>
+
+  </div>
+
   <!-- CONTACT -->
   <div class="panel" id="panel-contact">
     <div class="panel-title">contact</div>
     <div class="contact-grid">
       <a class="contact-item" href="https://github.com/ar1sha55" target="_blank" rel="noopener">
-        <span class="c-platform">github</span><span class="c-handle">ar1sha55</span><span class="c-arrow">→</span>
+        <span class="c-platform">github</span>
+        <span class="c-handle">ar1sha55</span>
+        <span class="c-arrow">→</span>
+      </a>
+      <a class="contact-item" href="https://profile.hackthebox.com/" target="_blank" rel="noopener">
+        <span class="c-platform">hackthebox</span>
+        <span class="c-handle">ar1sha55</span>
+        <span class="c-sub">active player</span>
+        <span class="c-arrow">→</span>
+      </a>
+      <a class="contact-item" href="https://tryhackme.com/p/nurarisha" target="_blank" rel="noopener">
+        <span class="c-platform">tryhackme</span>
+        <span class="c-handle">nurarisha</span>
+        <span class="c-sub">SOC Level 1 path</span>
+        <span class="c-arrow">→</span>
       </a>
       <a class="contact-item" href="https://www.notion.so/Cybersecurity-Learning-31c1f5517c5f806c9dabe2ee98c93b2b" target="_blank" rel="noopener">
-        <span class="c-platform">notion</span><span class="c-handle">ctf writeups</span><span class="c-arrow">→</span>
+        <span class="c-platform">notion</span>
+        <span class="c-handle">ctf writeups</span>
+        <span class="c-arrow">→</span>
       </a>
       <a class="contact-item" href="mailto:" id="email-link">
-        <span class="c-platform">email</span><span class="c-handle" id="email-handle">get in touch</span><span class="c-arrow">→</span>
+        <span class="c-platform">email</span>
+        <span class="c-handle" id="email-handle">get in touch</span>
+        <span class="c-arrow">→</span>
       </a>
-      <a class="contact-item" href="#" id="resume-link">
-        <span class="c-platform">resume</span><span class="c-handle">download cv</span><span class="c-arrow">↓</span>
+      <!-- CV DOWNLOAD -->
+      <a class="contact-item" href="cv.pdf" id="cv-link" download>
+        <span class="c-platform">resume / cv</span>
+        <span class="c-handle">download cv</span>
+        <span class="c-sub" id="cv-status">upload cv.pdf to your repo</span>
+        <span class="c-arrow">↓</span>
       </a>
+    </div>
+
+    <!-- CV INSTRUCTIONS -->
+    <div class="cv-box">
+      <div class="cv-box-title">how to add your cv</div>
+      <div class="cv-box-desc">
+        To enable the CV download button above, save your CV as <strong style="color:var(--text);font-family:var(--mono);font-size:11px;">cv.pdf</strong> and place it in your GitHub Pages repo alongside this <code style="font-family:var(--mono);font-size:11px;background:var(--bg);padding:1px 5px;border-radius:2px;border:1px solid var(--border);">index.html</code>. The download link will work automatically once the file is there.
+      </div>
+      <div style="font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--bg);border:1px solid var(--border);border-radius:3px;padding:0.75rem 1rem;line-height:1.9;">
+        <span style="color:var(--text);">ar1sha55.github.io/</span><br/>
+        ├── index.html &nbsp;<span style="color:var(--green);">← this file</span><br/>
+        └── cv.pdf &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--green);">← add this</span>
+      </div>
     </div>
   </div>
 
@@ -309,6 +702,7 @@ const LANG_COLORS = {
   Ruby:'#cc342d',Java:'#ed8b00',
 };
 
+// Navigation
 function showPanel(id) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('[data-panel]').forEach(b => b.classList.remove('active'));
@@ -316,11 +710,19 @@ function showPanel(id) {
   document.querySelectorAll(`[data-panel="${id}"]`).forEach(el => el.classList.add('active'));
   document.querySelector('main').scrollTop = 0;
 }
-
 document.querySelectorAll('[data-panel]').forEach(el => {
   el.addEventListener('click', () => showPanel(el.dataset.panel));
 });
 
+// Check if cv.pdf exists
+fetch('cv.pdf', { method: 'HEAD' }).then(r => {
+  if (r.ok) {
+    document.getElementById('cv-status').textContent = 'pdf ready';
+    document.getElementById('cv-status').style.color = 'var(--green)';
+  }
+}).catch(() => {});
+
+// GitHub Profile
 async function fetchProfile() {
   try {
     const res = await fetch(`https://api.github.com/users/${GITHUB_USER}`);
@@ -333,21 +735,28 @@ async function fetchProfile() {
     if (d.bio) {
       document.getElementById('hero-bio').textContent = d.bio;
       document.getElementById('about-bio').innerHTML =
-        `<p>${d.bio}</p><br/><p>Competing in <strong>CTF competitions</strong> and building security tooling. Writeups on <a href="${NOTION_URL}" target="_blank">Notion</a>.</p><br/><p>Currently focused on <strong>network forensics</strong>, <strong>web exploitation</strong>, and low-level systems security.</p>`;
+        `<p>${d.bio}</p><br/>
+        <p>Actively training on <strong>HackTheBox</strong> and working through the <strong>TryHackMe SOC Level 1</strong> path. CTF writeups and research notes are on <a href="${NOTION_URL}" target="_blank">Notion</a>.</p><br/>
+        <p>Currently focused on <strong>network forensics</strong>, <strong>web exploitation</strong>, and blue team operations.</p>`;
     }
     if (d.email) {
       document.getElementById('email-link').href = 'mailto:' + d.email;
       document.getElementById('email-handle').textContent = d.email;
     }
-    document.getElementById('stat-repos').textContent     = d.public_repos ?? '–';
-    document.getElementById('stat-followers').textContent = d.followers     ?? '–';
-    document.getElementById('stat-following').textContent = d.following     ?? '–';
-    document.getElementById('stat-gists').textContent     = d.public_gists  ?? '–';
-    if (d.public_repos) document.getElementById('ql-repos').textContent = d.public_repos + ' repos →';
+    const repos = d.public_repos ?? '–';
+    document.getElementById('stat-repos').textContent     = repos;
+    document.getElementById('stat-followers').textContent = d.followers ?? '–';
+    document.getElementById('stat-following').textContent = d.following ?? '–';
+    document.getElementById('stat-gists').textContent     = d.public_gists ?? '–';
+    if (d.public_repos) {
+      document.getElementById('ql-repos').textContent = d.public_repos + ' repos →';
+      document.getElementById('pc-github-sub').textContent = d.public_repos + ' public repos';
+    }
     document.getElementById('sf-stat').textContent = (d.public_repos ?? 0) + ' repos · ' + (d.followers ?? 0) + ' followers';
   } catch(e) {}
 }
 
+// GitHub Repos
 async function fetchRepos() {
   const el = document.getElementById('project-list');
   try {
@@ -371,6 +780,19 @@ async function fetchRepos() {
     el.innerHTML = `<a class="project-card" href="https://github.com/${GITHUB_USER}" target="_blank"><div style="flex:1;"><div class="project-name">view all on github →</div><div class="project-desc">could not load repos automatically.</div></div></a>`;
   }
 }
+
+// Animate SOC L1 progress bar (3 of 8 modules done, currently on 4th)
+// Update this number as you progress through the path
+const SOC_MODULES_DONE = 3;
+const SOC_MODULES_TOTAL = 8;
+const SOC_PCT = Math.round((SOC_MODULES_DONE / SOC_MODULES_TOTAL) * 100);
+
+setTimeout(() => {
+  const fill = document.getElementById('progress-fill');
+  const pct  = document.getElementById('progress-pct');
+  if (fill) fill.style.width = SOC_PCT + '%';
+  if (pct)  pct.textContent  = SOC_MODULES_DONE + ' / ' + SOC_MODULES_TOTAL + ' modules (' + SOC_PCT + '%)';
+}, 300);
 
 fetchProfile();
 fetchRepos();
